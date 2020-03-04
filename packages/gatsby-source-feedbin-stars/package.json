@@ -1,0 +1,15 @@
+{
+  "name": "gatsby-source-feedbin-stars",
+  "description": "Gatsby source plugin for getting starred items from Feedbin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "feedbin"
+  ],
+  "dependencies": {
+    "feedbin-stars": "1.0.0"
+  }
+}
