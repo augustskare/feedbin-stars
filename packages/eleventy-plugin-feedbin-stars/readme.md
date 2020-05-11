@@ -20,6 +20,7 @@ const feedbinStars = require("eleventy-plugin-feedbin-stars");
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(feedbinStars, {
     feed_id: "5Euw2uq5T9oUL7tUbs0_2A",
+    cache_duration: "4h",
   });
 };
 ```
@@ -32,6 +33,14 @@ Type: `string`<br>
 Required: `true`
 
 In Feedbin [general settings](https://feedbin.com/settings) you'll need to turn on "Starred article feed", you'll then get a feed URL. It will look something like https://feedbin.com/starred/5Euw2uq5T9oUL7tUbs0_2A.xml, grab the string between "https://feedbin.com/starred/" and ".xml". In this case the feed_id is `5Euw2uq5T9oUL7tUbs0_2A`.
+
+#### cache_duration
+
+Type: `string`<br>
+Required: `false`<br>
+Defaul: `"4h"`
+
+Uses eleventy-cache-assets under the hood, check the [documentation](https://www.npmjs.com/package/@11ty/eleventy-cache-assets#options) for duration options.
 
 ## How to use
 
