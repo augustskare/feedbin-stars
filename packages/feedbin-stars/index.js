@@ -24,14 +24,16 @@ function normalizeItem(item) {
   };
 }
 
-async function getStarredFeed(feed_id) {
+function request(url) {
+  return got(url, { resolveBodyOnly: true });
+}
+
+async function getStarredFeed(feed_id, fetch = request) {
   if (feed_id === undefined) {
     throw new Error("feed_id is required");
   }
 
-  const xmlFeed = await got(`https://feedbin.com/starred/${feed_id}.xml`, {
-    resolveBodyOnly: true,
-  });
+  const xmlFeed = await fetch(`https://feedbin.com/starred/${feed_id}.xml`);
   const { rss } = await parseString(xmlFeed);
 
   const { title, lastBuildDate, item } = rss.channel[0];
