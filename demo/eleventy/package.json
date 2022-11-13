@@ -1,5 +1,5 @@
 {
-  "name": "eleventy",
+  "name": "eleventy-demo",
   "version": "1.0.0",
   "main": "index.js",
   "private": true,
@@ -8,7 +8,7 @@
     "start": "eleventy --serve"
   },
   "dependencies": {
-    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy": "^0.10.0",
     "eleventy-plugin-feedbin-stars": "1.0.0"
   }
 }
