@@ -10,8 +10,5 @@
   ],
   "dependencies": {
     "prettier": "1.19.1"
-  },
-  "peerDependencies": {
-    "gatsby": "^2.19.27"
   }
 }
