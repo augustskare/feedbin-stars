@@ -1,14 +1,30 @@
 {
   "name": "feedbin-stars",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "2.0.0",
   "license": "MIT",
-  "private": true,
-  "workspaces": [
-    "packages/*",
-    "demo/*"
+  "type": "module",
+  "files": [
+    "dist"
   ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "npm run build -- --watch",
+    "build": "tsup-node index.ts --format esm,cjs --clean --dts"
+  },
   "dependencies": {
-    "prettier": "1.19.1"
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "prettier": "1.19.1",
+    "tsup": "^6.5.0",
+    "typescript": "^4.9.3"
   }
 }

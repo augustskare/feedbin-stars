@@ -1,5 +1,3 @@
 node_modules
-_site
-public
-.cache
-yarn-error.log
+.DS_Store
+dist
