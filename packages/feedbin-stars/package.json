@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "got": "^10.6.0",
+    "got": "^11.8.5",
     "xml2js": "^0.4.23"
   }
 }
