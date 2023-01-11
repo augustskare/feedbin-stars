@@ -6,10 +6,14 @@ export default async function getStarredFeed(feed_id: string) {
   const { rss: feed } = (await parseStringPromise(xml)) as Feed;
 
   const items: Item[] = feed.channel[0].item.map(item => {
+    let link = undefined;
+    try {
+      link = new URL(item.link[0]);
+    } catch (error) {}
     return {
       title: item.title[0],
       description: item.description[0] ?? undefined,
-      link: new URL(item.link[0]),
+      link,
       pubDate: new Date(item.pubDate[0]),
       guid: item.guid[0]._,
     };
@@ -21,7 +25,7 @@ export default async function getStarredFeed(feed_id: string) {
 export interface Item {
   title: string;
   description?: string;
-  link: URL;
+  link?: URL;
   pubDate: Date;
   guid: string;
 }
